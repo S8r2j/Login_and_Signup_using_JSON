@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="http://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <script src="http://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+</head>
+
+<body>
+
+    <section class="h-100 bg-dark" method="post">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card card-registration my-4">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                                    alt="Sample photo" class="img-fluid"
+                                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+                                    <h3 class="mb-5 text-uppercase">Student registration form</h3>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="firstname">First name</label>
+                                                <input type="text" id="firstname" name="firstname"
+                                                    class="form-control form-control-lg" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="lastname">Last name</label>
+                                                <input type="text" id="lastname" name="lastname"
+                                                    class="form-control form-control-lg" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="mothername">Mother's name</label>
+                                                <input type="text" id="mothername" name="mothername"
+                                                    class="form-control form-control-lg" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="fathername">Father's name</label>
+                                                <input type="text" id="fathername" name="fathername"
+                                                    class="form-control form-control-lg" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+
+                                        <label class="form-label" for="address">Address</label>
+                                        <input type="text" id="address" name="address"
+                                            class="form-control form-control-lg" />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="dob">DOB</label>
+                                        <input type="text" id="dob" name="dob" class="form-control form-control-lg" />
+
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="pincode">Pincode</label>
+                                        <input type="text" id="pincode" name="pincode"
+                                            class="form-control form-control-lg" />
+
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="course">Course</label>
+                                        <input type="text" id="course" name="course"
+                                            class="form-control form-control-lg" />
+
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="emaill">Email ID</label>
+                                        <input type="email" id="emaill" name="emaill"
+                                            class="form-control form-control-lg" />
+
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="password">Password</label>
+                                        <input type="password" id="password" name="password"
+                                            class="form-control form-control-lg" />
+
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="repassword">Confirm Password</label>
+                                        <input type="password" id="repassword" name="repassword"
+                                            class="form-control form-control-lg" />
+
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-end pt-3">
+                                        <button type="button" class="btn btn-primary btn-lg" onclick="resetform()">Reset
+                                            all</button>
+                                        <button type="button" class="btn btn-warning btn-lg ms-2"
+                                            onclick="saveData()">Register</button>
+                                        <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/login.html'">Log in</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $("#firstname").focus();
+        function validateAndGetFormData() {
+            var firstnameVar = $("#firstname").val();
+            if (firstnameVar == "") {
+                alert("First Name is required");
+                $("#firstname").focus();
+                return "";
+            }
+            var lastnameVar = $("#lastname").val();
+            if (lastnameVar == "") {
+                alert("Last Name is required");
+                $("#lastname").focus();
+                return "";
+            }
+            var mothernameVar = $("#mothername").val();
+            if (mothernameVar == "") {
+                alert("Mother's Name is required");
+                $("#mothername").focus();
+                return "";
+            }
+            var fathernameVar = $("#fathername").val();
+            if (fathernameVar == "") {
+                alert("Father's name is required");
+                $("#fathername").focus();
+            }
+            var addressVar = $("#address").val();
+            if (addressVar == "") {
+                alert("Address is required");
+                $("#address").focus();
+                return "";
+            }
+            var dobVar = $("#dob").val();
+            if (dobVar == "") {
+                alert("Enter your Date of Birth");
+                $("#dob").focus();
+                return "";
+            }
+            var pincodeVar = $("#pincode").val();
+            if (pincodeVar == "") {
+                alert("Enter the postal code of your address");
+                $("#pincode").focus();
+                return "";
+            }
+            var courseVar = $("#course").val();
+            if (courseVar == "") {
+                alert("Enter your running course");
+                $("#course").focus();
+                return "";
+            }
+            var emailVar = $("#emaill").val();
+            if (emailVar == "") {
+                alert("Enter your email");
+                $("#emaill").focus();
+                return "";
+            }
+            var passwordVar=$("#password").val();
+            {
+                if(passwordVar=="")
+                {
+                    alert("Enter the password");
+                    $("#password").focus();
+                    return "";
+                }
+            }
+            var repasswordVar=$("#repassword").val();
+            if(repasswordVar=="")
+            {
+                alert("Re-type the password");
+                $("#repassword").focus();
+                return "";
+            }
+            else if(repasswordVar!=passwordVar)
+            {
+                alert("Password did not match");
+                $("#password").focus();
+                return "";
+            }
+            var jsonStrObj = {
+                firstname: firstnameVar,
+                lastname: lastnameVar,
+                mothername: mothernameVar,
+                fathername: fathernameVar,
+                dob: dobVar,
+                pincode: pincodeVar,
+                course: courseVar,
+                emaill: emailVar,
+                password: passwordVar
+            };
+            return JSON.stringify(jsonStrObj);
+        }
+        function resetform() {
+            $("#firstname").val("");
+            $("#lastname").val("");
+            $("#mothername").val("");
+            $("#fathername").val("");
+            $("#address").val("");
+            $("#dob").val("");
+            $("#pincode").val("");
+            $("#course").val("");
+            $("#emaill").val("");
+            $("#password").val("");
+            $("#repassword").val("");
+        }
+
+        function saveData() {
+            var jsonStr = validateAndGetFormData();
+            if (jsonStr == "") {
+                return;
+            }
+            var putStr = createPUTRequest("90939099|-31949283067377510|90946410", jsonStr, "Student Data", "Study");
+            alert(putStr);
+            jQuery.ajaxSetup({ async: false });
+            var resultObj = executeCommandAtGivenBaseUrl(putStr,
+                "http://api.login2explore.com:5577", "/api/iml");
+            alert(JSON.stringify(resultObj));
+            jQuery.ajaxSetup({ async: true });
+            resetform();
+        }
+
+    </script>
+</body>
+
+</html>
